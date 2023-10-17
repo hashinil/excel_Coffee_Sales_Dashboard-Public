@@ -45,6 +45,19 @@ In this project, my primary aim was to
 
 **=IF(J2="M", "Medium",IF(J2="L", "Light", IF(J2="D","Dark","")))**
 
+:arrow_forward:Formatted **Order Date** to custom format dd-mmm-yyyy  
+
+**9/5/2019 > 5 Sep 2019**
+
+:arrow_forward:Formatted **Size** to custom format 0.0 Kg 
+
+**0.5 > 0.5 Kg**
+
+:arrow_forward:Change data type of  **Unit Price | Sales**  
+
+:arrow_forward:Remove duplicates 
+
+
 
 - [x] Data Analysis and Visualization: :bar_chart:
     
