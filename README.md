@@ -1,91 +1,113 @@
 # :coffee: [Coffee Sales Dashboard]() :coffee:
+![image](https://github.com/hashinil/excel_Coffee_Sales_Dashboard-Public/assets/33922245/741bec87-7153-48e8-974d-3e1594f89a3e)
 
-### Project Description:
+### :pushpin: About Project:
 
 Analyze coffee sales data using **Excel** and create dashboard.
+
 In this project, my primary aim was to 
-- Practise excel functionalities which helps to clean and analyze dataset.
+
+**:mag: Find:**
+
+- Total sales over time
+- Sales by Country
+- Top 5 customers
+
+**:dart: Practise**
+
+- Excel functionalities which helps to clean and analyze dataset.
 - Merge few tables data
 - Uncover hidden insights of dataset.
 - Visualize the statistics and patterns.
 
 
 ----------------------------------
-### Key Components of the Project:
 
-- [x] Data Preparation: :pencil:  :scissors:
 
-:arrow_forward:Filled main worksheet by getting data from other work sheets.
+### :pushpin: Key Components of the Project:
+
+
+**:scissors: Data Preparation:** 
+
+
+1. Filled main worksheet by getting data from other work sheets.
+1. Filled **Customer Name** from Order sheet
+
+      - [x] **=XLOOKUP(C2,customers!$A$2:$A$1001,customers!$B$2:$B$1001,,0)**
+
+1. Filled **Email** from Order sheet
+
+      - [x] **=IF(XLOOKUP(C2,customers!$A$2:$A$1001,customers!$C$2:$C$1001,,0)=0,"",XLOOKUP(C2,customers!$A$2:$A$1001,customers!$C$2:$C$1001,,0))**
       
-:arrow_forward:Filled **Customer Name** from Order sheet
+1. Filled **Country** from Order sheet
 
-**=XLOOKUP(C2,customers!$A$2:$A$1001,customers!$B$2:$B$1001,,0)**
+      - [x] **=XLOOKUP(C2,customers!$A$1:$A$1001,customers!$G$1:$G$1001,,0)**
 
-:arrow_forward:Filled **Email** from Order sheet
+1. Filled **All Product details** at once from Product sheet
 
-**=IF(XLOOKUP(C2,customers!$A$2:$A$1001,customers!$C$2:$C$1001,,0)=0,"",XLOOKUP(C2,customers!$A$2:$A$1001,customers!$C$2:$C$1001,,0))**
-      
-:arrow_forward:Filled **Country** from Order sheet
+      - [x] **=INDEX(products!$A$1:$G$49,MATCH(orders!$D2,products!$A$1:$A$49,0),MATCH(orders!I$1,products!$A$1:$G$1,0))**
 
-**=XLOOKUP(C2,customers!$A$1:$A$1001,customers!$G$1:$G$1001,,0)**
+1. Filled **Sales**: Unit Price X Quantity
 
-:arrow_forward:Filled **All Product details** at once from Product sheet
+      - [x] **=L2*E2**
 
-**=INDEX(products!$A$1:$G$49,MATCH(orders!$D2,products!$A$1:$A$49,0),MATCH(orders!I$1,products!$A$1:$G$1,0))**
+1. Added new column **Coffee Type Name** and filed data 
 
-:arrow_forward:Filled **Sales**: Unit Price X Quantity
-
-**=L2*E2**
-
-:arrow_forward:Added new column **Coffee Type Name** and filed data 
-
-**=IF(I2="Rob", "Robusta",IF(I2="Exc", "Excelsa", IF(I2="Ara", "Arabica", IF(I2="Lib","Liberica",""))))**
+      - [x] **=IF(I2="Rob", "Robusta",IF(I2="Exc", "Excelsa", IF(I2="Ara", "Arabica", IF(I2="Lib","Liberica",""))))**
  
-:arrow_forward:Added new column **Roast Type Name** and filed data
+1. Added new column **Roast Type Name** and filed data
 
-**=IF(J2="M", "Medium",IF(J2="L", "Light", IF(J2="D","Dark","")))**
+      - [x] **=IF(J2="M", "Medium",IF(J2="L", "Light", IF(J2="D","Dark","")))**
 
-:arrow_forward:Formatted **Order Date** to custom format dd-mmm-yyyy  
+1. Added new column **Loyality Card** and filed data
 
-**9/5/2019 > 5 Sep 2019**
+      - [x] **=XLOOKUP([@[Customer ID]],customers!$A$1:$A$1001,customers!$I$1:$I$1001,,0)**
 
-:arrow_forward:Formatted **Size** to custom format 0.0 Kg 
+1. Formatted **Order Date** to custom format dd-mmm-yyyy  
 
-**0.5 > 0.5 Kg**
+      - [x] **9/5/2019 > 5 Sep 2019**
 
-:arrow_forward:Change data type of  **Unit Price | Sales**  
+1. Formatted **Size** to custom format 0.0 Kg 
 
-:arrow_forward:Remove duplicates 
+      - [x] **0.5 > 0.5 Kg**
+
+1. Change data type of  **Unit Price | Sales**
+
+      - [x] **USD**
+
+1. Remove duplicates 
 
 
+**:bar_chart: Data Analysis and Visualization:** 
 
-- [x] Data Analysis and Visualization: :bar_chart:
+1. Create table
+
+      - [x] Select all data and **Ctrl+t**
+
+1. Name your table.
+   
+      ![image](https://github.com/hashinil/excel_Coffee_Sales_Dashboard-Public/assets/33922245/77ca97a5-98d0-4b52-901f-15d38d0b6a7a)
     
-- Create pivot table for **"Average Income pre Purchase by Gender"** and generate **"Clustered Column Chart"**
+1. Create pivot table, re-name the sheet **TotalSales**, re-name the pivot table **TotalSales**. Add line chart, Timeline filter and do cosmetic Changes.
 
-![image](https://github.com/hashinil/excel_Bike_Sales_Dashboard/assets/33922245/c954524a-a0a8-41f9-8b1b-0d0d1185bb9d)
-![image](https://github.com/hashinil/excel_Bike_Sales_Dashboard/assets/33922245/0687f643-8af8-4e4c-89b9-5ae8d76e82a5)
+      ![image](https://github.com/hashinil/excel_Coffee_Sales_Dashboard-Public/assets/33922245/f95cc854-f6d4-4d83-969d-b225740c2854)
 
+1. Take a Copy of pivot table and rename Sheet **CountryBarChart**
 
-- Create pivot table for **"Purchasing by Commute Distance"** and generate **"Line Chart"**
-  
-![image](https://github.com/hashinil/excel_Bike_Sales_Dashboard/assets/33922245/b286a06f-e37f-405a-ae0f-5d327212a148)
-![image](https://github.com/hashinil/excel_Bike_Sales_Dashboard/assets/33922245/33faf453-f9f1-4072-b8fb-6f4e830cdae8)
+      ![image](https://github.com/hashinil/excel_Coffee_Sales_Dashboard-Public/assets/33922245/9d0e77dd-0b93-4800-acb4-b0628cc830be)
 
-- Create pivot table for **"Purchasing by Commute Distance"** and generate **"Line with Markers Chart"**
+1. Take a Copy of pivot table and rename Sheet **Top5Customers**
 
-![image](https://github.com/hashinil/excel_Bike_Sales_Dashboard/assets/33922245/8920eb61-d5e9-46ba-ad97-92c44a3e03ce)
-![image](https://github.com/hashinil/excel_Bike_Sales_Dashboard/assets/33922245/c2d2856b-a311-4eb2-977a-44be55a2a70c)
+      ![image](https://github.com/hashinil/excel_Coffee_Sales_Dashboard-Public/assets/33922245/8bd035c2-f86e-4786-96a6-78560b7aed35)
 
-- Created Dashboard and add Slicer for **Marital Status**
+1. Created New worksheet and named it **Dashboard**
+   
+1. Then Copied all charts created, applied filters for all charts and did few cosmetic changes.
 
-![image](https://github.com/hashinil/excel_Bike_Sales_Dashboard/assets/33922245/338fe889-45c4-415b-871a-6f147f1160d3)
-
-- Then few cosmetic changes.
-- :golf:
+:golf:
 
 ----------------------------------
-### Technologies and Tools Used: 
+### :pushpin: Technologies and Tools Used: 
 
 - Excel
 
